@@ -14,7 +14,7 @@ RUN apt-get update \
   && dpkg --install /tmp/squid/squid-common_3.5.12-1ubuntu8_all.deb \
   && dpkg --install /tmp/squid/squid_3.5.12-1ubuntu8_amd64.deb \
   && dpkg --install /tmp/squid/squidclient_3.5.12-1ubuntu8_amd64.deb \
-  && mv /etc/squid3/squid.conf /etc/squid3/squid.conf.dist
+  && rm -f /etc/squid3/squid.conf
 
 COPY squid.conf /tmp/squid.conf
 COPY entrypoint.d/*.sh /usr/local/entrypoint.d/
